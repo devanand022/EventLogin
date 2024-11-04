@@ -10,5 +10,5 @@ module.exports = {
   },
   setupFilesAfterEnv: ["@testing-library/jest-dom"],
   collectCoverage: true,
-  coverageDirectory: "<rootDir>/coverage"
+  coverageDirectory: "<rootDir>/coverage",
 };

@@ -3,5 +3,8 @@
     "ts-react-important-stuff",
     "plugin:prettier/recommended"
   ],
+  "parserOptions": {
+    "requireConfigFile" : false
+  },
   "parser": "@babel/eslint-parser"
 }
