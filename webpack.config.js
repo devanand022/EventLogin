@@ -23,6 +23,13 @@ module.exports = (webpackConfigEnv, argv) => {
         },
       ],
     },
+    devServer: {
+      port: "8081",
+      server: "https",
+      client: {
+        overlay: false,
+      },
+    },
     output: {
       path: path.resolve(__dirname, "dist"),
     },
