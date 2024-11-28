@@ -1,15 +1,30 @@
 const { merge } = require("webpack-merge");
+const path = require("path");
 const singleSpaDefaults = require("webpack-config-single-spa-react-ts");
 
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
     orgName: "devorg",
-    projectName: "EventLogin",
+    projectName: "eventlogin",
     webpackConfigEnv,
     argv,
   });
 
   return merge(defaultConfig, {
-    // modify the webpack config however you'd like to by adding to this object
+    module: {
+      rules: [
+        {
+          test: /\.scss$/,
+          use: [
+            { loader: "style-loader" },
+            { loader: "css-loader" },
+            { loader: "sass-loader" },
+          ],
+        },
+      ],
+    },
+    output: {
+      path: path.resolve(__dirname, "dist"),
+    },
   });
 };
